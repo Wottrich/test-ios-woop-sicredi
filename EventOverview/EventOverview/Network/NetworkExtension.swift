@@ -10,9 +10,9 @@ import UIKit
 import Alamofire
 import ObjectMapper
 
-extension Network {
-
-    public class func buildRequest(_ anotherUrl: String? = nil, _ networkProtocol: NetworkProtocol) throws -> URLRequest {
+extension Network: BaseNetworkProtocol {
+    
+    class func buildRequest(_ anotherUrl: String? = nil, _ networkProtocol: NetworkProtocol) throws -> URLRequest {
         
         var request: URLRequest
         
@@ -35,9 +35,9 @@ extension Network {
         
     }
     
-    public class func loadObject<T: Mappable> (
+    class func loadObject<T: Mappable> (
         _ json: [String: Any],
-        _ completion: @escaping (T?) -> Void = {_ in},
+        _ completion: @escaping (T?) -> Void,
         _ failure: @escaping (String) -> Void
     ) {
         
@@ -49,9 +49,9 @@ extension Network {
         
     }
     
-    public class func loadArray<T: Mappable> (
+    class func loadArray<T: Mappable> (
         _ array: Array<[String: AnyObject]>,
-        _ completion: @escaping ([T]) -> Void = {_ in},
+        _ completion: @escaping ([T]) -> Void,
         _ failure: @escaping (String) -> Void
     ) {
         

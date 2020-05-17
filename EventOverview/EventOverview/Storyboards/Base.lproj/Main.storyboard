@@ -26,47 +26,37 @@
         <!--Bem-vindo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="BaseViewController" id="BYZ-38-t0r" customClass="BaseViewController" customModule="EventOverview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaseViewController" id="BYZ-38-t0r" customClass="EventsViewController" customModule="EventOverview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JqQ-7u-evL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JqQ-7u-evL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="VGi-hd-8wq">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui está alguns eventos." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n75-Ux-3wQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <constraints>
-                                        <constraint firstItem="n75-Ux-3wQ" firstAttribute="top" secondItem="VGi-hd-8wq" secondAttribute="top" id="FTt-h1-aaN"/>
-                                        <constraint firstAttribute="trailing" secondItem="n75-Ux-3wQ" secondAttribute="trailing" id="eDV-ey-5hJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="n75-Ux-3wQ" secondAttribute="bottom" id="mc6-Hh-Lxe"/>
-                                        <constraint firstItem="n75-Ux-3wQ" firstAttribute="leading" secondItem="VGi-hd-8wq" secondAttribute="leading" id="xHV-bB-IfM"/>
-                                    </constraints>
-                                </view>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zJm-Tl-cre">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JqQ-7u-evL" secondAttribute="trailing" id="FMb-T1-Hco"/>
                             <constraint firstItem="JqQ-7u-evL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ous-Ah-Mac"/>
+                            <constraint firstItem="zJm-Tl-cre" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QDq-6T-6uZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JqQ-7u-evL" secondAttribute="bottom" id="ipH-La-WIW"/>
                             <constraint firstItem="JqQ-7u-evL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nk1-zV-l9M"/>
+                            <constraint firstItem="zJm-Tl-cre" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tO9-7s-RJv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bem-vindo" id="ui0-Mu-JUk">
                         <barButtonItem key="backBarButtonItem" title=" " id="wOy-U9-Ysh"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="loader" destination="zJm-Tl-cre" id="rej-0P-BKw"/>
+                        <outlet property="tableView" destination="JqQ-7u-evL" id="CF0-ay-gLl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

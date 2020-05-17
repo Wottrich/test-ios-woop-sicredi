@@ -28,6 +28,27 @@ public protocol NetworkProtocol {
     var returnIsEmpty: Bool { get }
 }
 
+protocol BaseNetworkProtocol {
+    
+    static func buildRequest(
+        _ anotherUrl: String?,
+        _ networkProtocol: NetworkProtocol
+    ) throws -> URLRequest
+    
+    static func loadObject<T: Mappable> (
+        _ json: [String: Any],
+        _ completion: @escaping (T?) -> Void,
+        _ failure: @escaping (String) -> Void
+    )
+    
+    static func loadArray<T: Mappable> (
+        _ array: Array<[String: AnyObject]>,
+        _ completion: @escaping ([T]) -> Void,
+        _ failure: @escaping (String) -> Void
+    )
+    
+}
+
 class Network {
     
     @discardableResult
@@ -52,9 +73,9 @@ class Network {
                     }
                     
                     if let json = value as? [String: Any] {
-                        loadObject(json, completion, failure)
+                        Network.loadObject(json, completion, failure)
                     } else if let array = value as? Array<[String: AnyObject]> {
-                        loadArray(array, completionArray, failure)
+                        Network.loadArray(array, completionArray, failure)
                     } else {
                         failure(NetworkDefaultErrors.defaultError.rawValue)
                     }
@@ -65,36 +86,6 @@ class Network {
                 
             }
     }
-    
-    @discardableResult
-    public class func requestMock (
-        _ networkProtocol: NetworkProtocol,
-        anotherUrl: String? = nil,
-        data: Data?,
-        completion: @escaping (Data?) -> Void = {_ in},
-        failure: @escaping (String) -> Void
-    ) throws -> DataRequest {
-        
-        return try AF.request(buildRequest(anotherUrl, networkProtocol)).printJson
-            .responseJSON { response in
-                
-                switch(response.result) {
-                case .success:
-                    
-                    if networkProtocol.returnIsEmpty {
-                        completion(nil)
-                        return
-                    }
-                    
-                    completion(data)
-                
-                case let .failure(error):
-                    failure(error.localizedDescription)
-                }
-                
-            }
-    }
-    
     
 }
 

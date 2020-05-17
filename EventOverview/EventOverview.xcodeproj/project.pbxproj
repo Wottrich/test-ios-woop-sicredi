@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C4B1BEFAEBB211734855C56 /* Pods_EventOverview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E8F02BB8D6757393D9FD59 /* Pods_EventOverview.framework */; };
 		58C828089C057E3CE6449F01 /* Pods_EventOverviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDF31E8F2C908DADB1B3494 /* Pods_EventOverviewTests.framework */; };
-		A993B849C8A6262BF31981C3 /* Pods_EventOverviewSlowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620E9489DCD6E8A277922F57 /* Pods_EventOverviewSlowTests.framework */; };
 		AB37A82624708B5900177B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A82524708B5900177B3E /* AppDelegate.swift */; };
 		AB37A82824708B5900177B3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A82724708B5900177B3E /* SceneDelegate.swift */; };
 		AB37A82A24708B5900177B3E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A82924708B5900177B3E /* BaseViewController.swift */; };
@@ -17,7 +16,6 @@
 		AB37A82F24708B5B00177B3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB37A82E24708B5B00177B3E /* Assets.xcassets */; };
 		AB37A83224708B5B00177B3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB37A83024708B5B00177B3E /* LaunchScreen.storyboard */; };
 		AB37A83D24708B5C00177B3E /* EventOverviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A83C24708B5C00177B3E /* EventOverviewTests.swift */; };
-		AB37A8552470990500177B3E /* EventOverviewSlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A8542470990500177B3E /* EventOverviewSlowTests.swift */; };
 		AB724C2E2470B056006B4BC3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C2D2470B056006B4BC3 /* Network.swift */; };
 		AB724C302470B1E0006B4BC3 /* NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C2F2470B1E0006B4BC3 /* NetworkExtension.swift */; };
 		AB724C332470DC94006B4BC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C322470DC94006B4BC3 /* Constants.swift */; };
@@ -25,19 +23,28 @@
 		AB724C382470F6C4006B4BC3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C372470F6C4006B4BC3 /* Event.swift */; };
 		AB724C3B2470F6F0006B4BC3 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C3A2470F6F0006B4BC3 /* People.swift */; };
 		AB724C3D2470FB83006B4BC3 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C3C2470FB83006B4BC3 /* Coupon.swift */; };
-		AB724C4324710C0E006B4BC3 /* eventsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724C4224710C0E006B4BC3 /* eventsMock.json */; };
-		AB724C4524710C64006B4BC3 /* NetworkSlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C4424710C64006B4BC3 /* NetworkSlowTests.swift */; };
+		AB724C492471821D006B4BC3 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C482471821D006B4BC3 /* EventService.swift */; };
+		AB724C4B247182F3006B4BC3 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C4A247182F3006B4BC3 /* NetworkMock.swift */; };
+		AB724C4D247188AA006B4BC3 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C4C247188AA006B4BC3 /* EventsViewModel.swift */; };
+		AB724C4F247188CF006B4BC3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C4E247188CF006B4BC3 /* EventsViewController.swift */; };
+		AB724C5124718AD1006B4BC3 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C5024718AD1006B4BC3 /* BaseTableViewCell.swift */; };
+		AB724C5424718B06006B4BC3 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C5324718B06006B4BC3 /* UITableViewCellExtension.swift */; };
+		AB724C5824718B66006B4BC3 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C5624718B66006B4BC3 /* EventsTableViewCell.swift */; };
+		AB724C5924718B66006B4BC3 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB724C5724718B66006B4BC3 /* EventsTableViewCell.xib */; };
+		AB724C5B2471BBD4006B4BC3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C5A2471BBD4006B4BC3 /* UIViewExtension.swift */; };
+		AB724C5D2471ED82006B4BC3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C5C2471ED82006B4BC3 /* DateExtension.swift */; };
+		AB724C5F2471EE37006B4BC3 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C5E2471EE37006B4BC3 /* DoubleExtension.swift */; };
+		AB724C612471F016006B4BC3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C602471F016006B4BC3 /* UIImageViewExtension.swift */; };
+		AB724C682471F8EE006B4BC3 /* EventHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C662471F8EE006B4BC3 /* EventHeaderTableViewCell.swift */; };
+		AB724C692471F8EE006B4BC3 /* EventHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB724C672471F8EE006B4BC3 /* EventHeaderTableViewCell.xib */; };
+		AB724C6E2471FE01006B4BC3 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C4424710C64006B4BC3 /* NetworkTests.swift */; };
+		AB724C6F2471FE13006B4BC3 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C6C2471FDCC006B4BC3 /* EventTests.swift */; };
+		AB724C7E2471FFBC006B4BC3 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724C7C2471FFBC006B4BC3 /* events.json */; };
+		AB724C7F2471FFBC006B4BC3 /* event.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724C7D2471FFBC006B4BC3 /* event.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		AB37A83924708B5B00177B3E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB37A81A24708B5900177B3E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB37A82124708B5900177B3E;
-			remoteInfo = EventOverview;
-		};
-		AB37A8572470990500177B3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AB37A81A24708B5900177B3E /* Project object */;
 			proxyType = 1;
@@ -64,9 +71,6 @@
 		AB37A83824708B5B00177B3E /* EventOverviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventOverviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB37A83C24708B5C00177B3E /* EventOverviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOverviewTests.swift; sourceTree = "<group>"; };
 		AB37A83E24708B5C00177B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB37A8522470990500177B3E /* EventOverviewSlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventOverviewSlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB37A8542470990500177B3E /* EventOverviewSlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOverviewSlowTests.swift; sourceTree = "<group>"; };
-		AB37A8562470990500177B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB724C2D2470B056006B4BC3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		AB724C2F2470B1E0006B4BC3 /* NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtension.swift; sourceTree = "<group>"; };
 		AB724C322470DC94006B4BC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -74,8 +78,24 @@
 		AB724C372470F6C4006B4BC3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		AB724C3A2470F6F0006B4BC3 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		AB724C3C2470FB83006B4BC3 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
-		AB724C4224710C0E006B4BC3 /* eventsMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eventsMock.json; sourceTree = "<group>"; };
-		AB724C4424710C64006B4BC3 /* NetworkSlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSlowTests.swift; sourceTree = "<group>"; };
+		AB724C4424710C64006B4BC3 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		AB724C482471821D006B4BC3 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		AB724C4A247182F3006B4BC3 /* NetworkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
+		AB724C4C247188AA006B4BC3 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		AB724C4E247188CF006B4BC3 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		AB724C5024718AD1006B4BC3 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		AB724C5324718B06006B4BC3 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		AB724C5624718B66006B4BC3 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		AB724C5724718B66006B4BC3 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		AB724C5A2471BBD4006B4BC3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		AB724C5C2471ED82006B4BC3 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		AB724C5E2471EE37006B4BC3 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		AB724C602471F016006B4BC3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		AB724C662471F8EE006B4BC3 /* EventHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		AB724C672471F8EE006B4BC3 /* EventHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		AB724C6C2471FDCC006B4BC3 /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		AB724C7C2471FFBC006B4BC3 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		AB724C7D2471FFBC006B4BC3 /* event.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = event.json; sourceTree = "<group>"; };
 		BDDF31E8F2C908DADB1B3494 /* Pods_EventOverviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventOverviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE231D159E14F1F2B995450B /* Pods-EventOverview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverview.release.xcconfig"; path = "Target Support Files/Pods-EventOverview/Pods-EventOverview.release.xcconfig"; sourceTree = "<group>"; };
 		E6139445C90853F29E628279 /* Pods-EventOverviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverviewTests.release.xcconfig"; path = "Target Support Files/Pods-EventOverviewTests/Pods-EventOverviewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,14 +115,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C828089C057E3CE6449F01 /* Pods_EventOverviewTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB37A84F2470990500177B3E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A993B849C8A6262BF31981C3 /* Pods_EventOverviewSlowTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +149,6 @@
 			children = (
 				AB37A82424708B5900177B3E /* EventOverview */,
 				AB37A83B24708B5C00177B3E /* EventOverviewTests */,
-				AB37A8532470990500177B3E /* EventOverviewSlowTests */,
 				AB37A82324708B5900177B3E /* Products */,
 				341C6BFA290C0B3F02C6DE96 /* Pods */,
 				89C516EEEF34D3C529C62857 /* Frameworks */,
@@ -149,7 +160,6 @@
 			children = (
 				AB37A82224708B5900177B3E /* EventOverview.app */,
 				AB37A83824708B5B00177B3E /* EventOverviewTests.xctest */,
-				AB37A8522470990500177B3E /* EventOverviewSlowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +167,7 @@
 		AB37A82424708B5900177B3E /* EventOverview */ = {
 			isa = PBXGroup;
 			children = (
+				AB724C5224718AEA006B4BC3 /* Extensions */,
 				AB724C342470F4B5006B4BC3 /* Service */,
 				AB724C312470DC80006B4BC3 /* Utils */,
 				AB724C2A2470A72D006B4BC3 /* Network */,
@@ -173,6 +184,9 @@
 		AB37A83B24708B5C00177B3E /* EventOverviewTests */ = {
 			isa = PBXGroup;
 			children = (
+				AB724C7B2471FFBC006B4BC3 /* JSONMock */,
+				AB724C712471FE25006B4BC3 /* Network */,
+				AB724C702471FE19006B4BC3 /* Models */,
 				AB37A83C24708B5C00177B3E /* EventOverviewTests.swift */,
 				AB37A83E24708B5C00177B3E /* Info.plist */,
 			);
@@ -201,6 +215,7 @@
 		AB37A84924708E7E00177B3E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				AB724C4C247188AA006B4BC3 /* EventsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -232,20 +247,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		AB37A8532470990500177B3E /* EventOverviewSlowTests */ = {
-			isa = PBXGroup;
-			children = (
-				AB724C4224710C0E006B4BC3 /* eventsMock.json */,
-				AB37A8542470990500177B3E /* EventOverviewSlowTests.swift */,
-				AB37A8562470990500177B3E /* Info.plist */,
-				AB724C4424710C64006B4BC3 /* NetworkSlowTests.swift */,
-			);
-			path = EventOverviewSlowTests;
-			sourceTree = "<group>";
-		};
 		AB724C282470A05E006B4BC3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AB724C652471F8D7006B4BC3 /* Headers */,
+				AB724C5524718B35006B4BC3 /* Events */,
+				AB724C5024718AD1006B4BC3 /* BaseTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				AB37A82924708B5900177B3E /* BaseViewController.swift */,
+				AB724C4E247188CF006B4BC3 /* EventsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			children = (
 				AB724C2D2470B056006B4BC3 /* Network.swift */,
 				AB724C2F2470B1E0006B4BC3 /* NetworkExtension.swift */,
+				AB724C4A247182F3006B4BC3 /* NetworkMock.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -279,8 +288,64 @@
 			isa = PBXGroup;
 			children = (
 				AB724C352470F4C5006B4BC3 /* EventProtocol.swift */,
+				AB724C482471821D006B4BC3 /* EventService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		AB724C5224718AEA006B4BC3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB724C5324718B06006B4BC3 /* UITableViewCellExtension.swift */,
+				AB724C5A2471BBD4006B4BC3 /* UIViewExtension.swift */,
+				AB724C5C2471ED82006B4BC3 /* DateExtension.swift */,
+				AB724C5E2471EE37006B4BC3 /* DoubleExtension.swift */,
+				AB724C602471F016006B4BC3 /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB724C5524718B35006B4BC3 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				AB724C5624718B66006B4BC3 /* EventsTableViewCell.swift */,
+				AB724C5724718B66006B4BC3 /* EventsTableViewCell.xib */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		AB724C652471F8D7006B4BC3 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				AB724C662471F8EE006B4BC3 /* EventHeaderTableViewCell.swift */,
+				AB724C672471F8EE006B4BC3 /* EventHeaderTableViewCell.xib */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		AB724C702471FE19006B4BC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB724C6C2471FDCC006B4BC3 /* EventTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB724C712471FE25006B4BC3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AB724C4424710C64006B4BC3 /* NetworkTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AB724C7B2471FFBC006B4BC3 /* JSONMock */ = {
+			isa = PBXGroup;
+			children = (
+				AB724C7C2471FFBC006B4BC3 /* events.json */,
+				AB724C7D2471FFBC006B4BC3 /* event.json */,
+			);
+			path = JSONMock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,25 +389,6 @@
 			productReference = AB37A83824708B5B00177B3E /* EventOverviewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AB37A8512470990500177B3E /* EventOverviewSlowTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB37A8592470990500177B3E /* Build configuration list for PBXNativeTarget "EventOverviewSlowTests" */;
-			buildPhases = (
-				4B582BB1440AA2501DA240C0 /* [CP] Check Pods Manifest.lock */,
-				AB37A84E2470990500177B3E /* Sources */,
-				AB37A84F2470990500177B3E /* Frameworks */,
-				AB37A8502470990500177B3E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AB37A8582470990500177B3E /* PBXTargetDependency */,
-			);
-			name = EventOverviewSlowTests;
-			productName = EventOverviewSlowTests;
-			productReference = AB37A8522470990500177B3E /* EventOverviewSlowTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -357,10 +403,6 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					AB37A83724708B5B00177B3E = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = AB37A82124708B5900177B3E;
-					};
-					AB37A8512470990500177B3E = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = AB37A82124708B5900177B3E;
 					};
@@ -381,7 +423,6 @@
 			targets = (
 				AB37A82124708B5900177B3E /* EventOverview */,
 				AB37A83724708B5B00177B3E /* EventOverviewTests */,
-				AB37A8512470990500177B3E /* EventOverviewSlowTests */,
 			);
 		};
 /* End PBXProject section */
@@ -391,8 +432,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB724C5924718B66006B4BC3 /* EventsTableViewCell.xib in Resources */,
 				AB37A83224708B5B00177B3E /* LaunchScreen.storyboard in Resources */,
 				AB37A82F24708B5B00177B3E /* Assets.xcassets in Resources */,
+				AB724C692471F8EE006B4BC3 /* EventHeaderTableViewCell.xib in Resources */,
 				AB37A82D24708B5900177B3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,42 +444,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB37A8502470990500177B3E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB724C4324710C0E006B4BC3 /* eventsMock.json in Resources */,
+				AB724C7F2471FFBC006B4BC3 /* event.json in Resources */,
+				AB724C7E2471FFBC006B4BC3 /* events.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B582BB1440AA2501DA240C0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EventOverviewSlowTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7AC56A70DBA135C0F631138A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,15 +520,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB724C5F2471EE37006B4BC3 /* DoubleExtension.swift in Sources */,
 				AB724C382470F6C4006B4BC3 /* Event.swift in Sources */,
+				AB724C4D247188AA006B4BC3 /* EventsViewModel.swift in Sources */,
 				AB724C2E2470B056006B4BC3 /* Network.swift in Sources */,
 				AB724C362470F4C5006B4BC3 /* EventProtocol.swift in Sources */,
 				AB724C302470B1E0006B4BC3 /* NetworkExtension.swift in Sources */,
+				AB724C5D2471ED82006B4BC3 /* DateExtension.swift in Sources */,
 				AB724C3B2470F6F0006B4BC3 /* People.swift in Sources */,
+				AB724C5B2471BBD4006B4BC3 /* UIViewExtension.swift in Sources */,
+				AB724C682471F8EE006B4BC3 /* EventHeaderTableViewCell.swift in Sources */,
+				AB724C612471F016006B4BC3 /* UIImageViewExtension.swift in Sources */,
 				AB724C3D2470FB83006B4BC3 /* Coupon.swift in Sources */,
+				AB724C5424718B06006B4BC3 /* UITableViewCellExtension.swift in Sources */,
+				AB724C492471821D006B4BC3 /* EventService.swift in Sources */,
 				AB37A82A24708B5900177B3E /* BaseViewController.swift in Sources */,
+				AB724C5824718B66006B4BC3 /* EventsTableViewCell.swift in Sources */,
+				AB724C4B247182F3006B4BC3 /* NetworkMock.swift in Sources */,
 				AB37A82624708B5900177B3E /* AppDelegate.swift in Sources */,
+				AB724C4F247188CF006B4BC3 /* EventsViewController.swift in Sources */,
 				AB37A82824708B5900177B3E /* SceneDelegate.swift in Sources */,
+				AB724C5124718AD1006B4BC3 /* BaseTableViewCell.swift in Sources */,
 				AB724C332470DC94006B4BC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,16 +549,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB724C6E2471FE01006B4BC3 /* NetworkTests.swift in Sources */,
+				AB724C6F2471FE13006B4BC3 /* EventTests.swift in Sources */,
 				AB37A83D24708B5C00177B3E /* EventOverviewTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB37A84E2470990500177B3E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB724C4524710C64006B4BC3 /* NetworkSlowTests.swift in Sources */,
-				AB37A8552470990500177B3E /* EventOverviewSlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,11 +562,6 @@
 			isa = PBXTargetDependency;
 			target = AB37A82124708B5900177B3E /* EventOverview */;
 			targetProxy = AB37A83924708B5B00177B3E /* PBXContainerItemProxy */;
-		};
-		AB37A8582470990500177B3E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB37A82124708B5900177B3E /* EventOverview */;
-			targetProxy = AB37A8572470990500177B3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -772,46 +787,6 @@
 			};
 			name = Release;
 		};
-		AB37A85A2470990500177B3E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 255B146C19C0D7D39D6F3F1F /* Pods-EventOverviewSlowTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EventOverviewSlowTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = github.io.wottrich.EventOverviewSlowTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventOverview.app/EventOverview";
-			};
-			name = Debug;
-		};
-		AB37A85B2470990500177B3E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89A54853253E61E00B8FBAFA /* Pods-EventOverviewSlowTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EventOverviewSlowTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = github.io.wottrich.EventOverviewSlowTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventOverview.app/EventOverview";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -838,15 +813,6 @@
 			buildConfigurations = (
 				AB37A84524708B5C00177B3E /* Debug */,
 				AB37A84624708B5C00177B3E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB37A8592470990500177B3E /* Build configuration list for PBXNativeTarget "EventOverviewSlowTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB37A85A2470990500177B3E /* Debug */,
-				AB37A85B2470990500177B3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

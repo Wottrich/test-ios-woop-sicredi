@@ -11,15 +11,14 @@ import Alamofire
 import ObjectMapper
 @testable import EventOverview
 
-
-class NetworkSlowTests: XCTestCase {
+class NetworkTests: XCTestCase {
 
     var fakeData: Data!
     
     override func setUp() {
        
         let testBundle = Bundle(for: type(of: self))
-        let path = testBundle.path(forResource: "eventsMock", ofType: "json")
+        let path = testBundle.path(forResource: "events", ofType: "json")
         let data = try? Data(contentsOf: URL(fileURLWithPath: path!), options: .alwaysMapped)
         
         self.fakeData = data
@@ -77,6 +76,7 @@ class NetworkSlowTests: XCTestCase {
                     XCTFail("Data is null")
                     return
                 }
+                
                 do {
                     let response = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0))
                     
@@ -88,13 +88,14 @@ class NetworkSlowTests: XCTestCase {
                 } catch let error as NSError {
                     XCTFail(error.localizedDescription)
                 }
+                
             }
             
             let failure: (String) -> Void = { error in
                 XCTFail(error)
             }
             
-            let task = try Network.requestMock(networkProtocol, data: self.fakeData, completion: completion, failure: failure)
+            let task = try NetworkMock.requestMock(networkProtocol, data: self.fakeData, completion: completion, failure: failure)
             
             task.resume()
             

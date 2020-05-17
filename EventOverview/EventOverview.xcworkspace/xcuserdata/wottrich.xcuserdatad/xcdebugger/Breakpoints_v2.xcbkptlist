@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0BDDC92-9A32-42B6-AAF4-E544A571EBBB"
+            uuid = "0E1549FA-07A6-4552-831D-5DB7C2134A72"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EventOverviewSlowTests/NetworkSlowTests.swift"
+            filePath = "EventOverviewTests/Models/EventTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "testFake_RequestShould_ReturnEventsOrNot_FinishWithSuccess()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "testFake_MapEventWithSuccess()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
