@@ -15,6 +15,12 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func alert(title: String = "Atenção", error message: String,
+               button: String = "OK", handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: button, style: .default, handler: handler))
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
 
