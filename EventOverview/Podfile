@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+#platform :ios, '10.0'
+use_frameworks!
+
+target 'EventOverview' do
+  
+  pod 'NetunoNavigation', '~> 0.0.6'
+  pod 'Alamofire', '~> 5.2'
+  pod 'ObjectMapper', '~> 3.4'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Kingfisher', '~> 5.0'
+
+  target 'EventOverviewSlowTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'EventOverviewTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
