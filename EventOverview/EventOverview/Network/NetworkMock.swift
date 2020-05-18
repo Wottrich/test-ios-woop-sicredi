@@ -17,8 +17,7 @@ class NetworkMock: BaseNetworkProtocol {
         _ networkProtocol: NetworkProtocol,
         anotherUrl: String? = nil,
         data: Data?,
-        completion: @escaping (Data?) -> Void = {_ in},
-        failure: @escaping (String) -> Void
+        completion: @escaping (Data?, String?) -> Void = {_, _ in}
     ) throws -> DataRequest {
         
         return try AF.request(buildRequest(anotherUrl, networkProtocol)).printJson
@@ -28,14 +27,14 @@ class NetworkMock: BaseNetworkProtocol {
                 case .success:
                     
                     if networkProtocol.returnIsEmpty {
-                        completion(nil)
+                        completion(nil, nil)
                         return
                     }
                     
-                    completion(data)
+                    completion(data, nil)
                 
                 case let .failure(error):
-                    failure(error.localizedDescription)
+                    completion(nil, error.localizedDescription)
                 }
                 
             }

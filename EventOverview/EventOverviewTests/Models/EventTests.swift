@@ -12,33 +12,57 @@ import ObjectMapper
 
 class EventTests: XCTestCase {
 
-    var fakeEvent: Data!
+    var fakeEvent: DataMock!
+    var fakeListEvent: DataMock!
     
     override func setUp() {
         let testBundle = Bundle(for: type(of: self))
-        let path = testBundle.path(forResource: "event", ofType: "json")
-        let data = try? Data(contentsOf: URL(fileURLWithPath: path!), options: .alwaysMapped)
-        
-        self.fakeEvent = data
+        self.fakeEvent = DataMock(bundle: testBundle, forResourse: "event", ofType: "json")
+        self.fakeListEvent = DataMock(bundle: testBundle, forResourse: "events", ofType: "json")
     }
 
     override func tearDown() {
         self.fakeEvent = nil
+        self.fakeListEvent = nil
     }
 
     func testFake_MapEventWithSuccess () {
         
-        let fakeData = try? JSONSerialization.jsonObject(with: self.fakeEvent, options: JSONSerialization.ReadingOptions(rawValue: 0))
+        let fakeData = self.fakeEvent.jsonObject()
         
         if let json = fakeData as? [String: AnyObject] {
-            
-            let eventJson = Event(JSON: json)
+            let eventJson: Event? = Event(JSON: json)
             XCTAssertNotNil(eventJson)
-            
-            let eventMap = Mapper<Event>().map(JSON: json)
-            XCTAssertNotNil(eventMap)
-            
+        } else {
+            XCTFail("Invalid json.")
         }
+        
+        let eventMap: Event? = self.fakeEvent.map(type: Event.self)
+        XCTAssertNotNil(eventMap)
+        
+    }
+    
+    func testFake_MapListEventWithSuccess () {
+        
+        let fakeData = self.fakeListEvent.jsonObject()
+        
+        if let JSONArray = fakeData as? Array<[String: AnyObject]> {
+            
+            let eventJson: [Event]? = JSONArray.map { (dictionary) -> Event in
+                if let event = Event(JSON: dictionary) {
+                    return event
+                } else {
+                    XCTFail("Event is null, mappable not completed")
+                    return Event()
+                }
+            }
+            XCTAssertNotNil(eventJson)
+        } else {
+            XCTFail("Invalid array json.")
+        }
+        
+        let eventMap: [Event]? = self.fakeListEvent.mapArray(type: Event.self)
+        XCTAssertNotNil(eventMap)
         
     }
 

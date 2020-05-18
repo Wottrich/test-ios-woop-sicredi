@@ -1,18 +1,18 @@
 //
-//  EventHeaderTableViewCell.swift
+//  ConfirmPeopleTableViewCell.swift
 //  EventOverview
 //
-//  Created by Wottrich on 17/05/20.
+//  Created by Wottrich on 18/05/20.
 //  Copyright © 2020 Wottrich Technology Company. All rights reserved.
 //
 
 import UIKit
 
-class EventHeaderTableViewCell: BaseTableViewCell {
+class ConfirmPeopleTableViewCell: BaseTableViewCell {
 
-    static let height: CGFloat = 44.0
+    static let height: CGFloat = 60.0
     
-    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var peopleCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,9 +25,8 @@ class EventHeaderTableViewCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(header message: String) {
-        super.setup()
-        self.headerLabel.text = message
+    func setup(peopleCount: String) {
+        self.peopleCountLabel.text = peopleCount
     }
     
 }

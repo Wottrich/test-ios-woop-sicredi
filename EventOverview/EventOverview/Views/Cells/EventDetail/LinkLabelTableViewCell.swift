@@ -1,18 +1,18 @@
 //
-//  EventHeaderTableViewCell.swift
+//  LinkLabelTableViewCell.swift
 //  EventOverview
 //
-//  Created by Wottrich on 17/05/20.
+//  Created by Wottrich on 18/05/20.
 //  Copyright © 2020 Wottrich Technology Company. All rights reserved.
 //
 
 import UIKit
 
-class EventHeaderTableViewCell: BaseTableViewCell {
+class LinkLabelTableViewCell: BaseTableViewCell {
 
-    static let height: CGFloat = 44.0
+    static let height: CGFloat = 32.0
     
-    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var linkLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,9 +25,9 @@ class EventHeaderTableViewCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(header message: String) {
+    func setup(messageLink: String) {
         super.setup()
-        self.headerLabel.text = message
+        self.linkLabel.text = messageLink
     }
     
 }

@@ -11,13 +11,21 @@ import Alamofire
 
 enum EventRoute {
     case events
+    case event(id: String)
 }
 
 class EventProtocol: NetworkProtocol {
     
     let route: EventRoute
     
-    var url: String = "events"
+    var url: String {
+        switch route {
+        case .events:
+            return "events"
+        case let .event(id):
+            return "events/\(id)"
+        }
+    }
     
     var headers: HTTPHeaders?
     
