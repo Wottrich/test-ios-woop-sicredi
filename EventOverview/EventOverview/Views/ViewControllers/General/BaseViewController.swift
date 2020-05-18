@@ -35,10 +35,11 @@ class BaseViewController: UIViewController {
     func alert(
         title: String = "Atenção",
         message: String,
+        style: UIAlertController.Style = .actionSheet,
         handlers: [UIAlertAction]
     ) {
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         
         for action in handlers {
             alert.addAction(action)

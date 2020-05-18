@@ -16,6 +16,8 @@ class People: NSObject {
     var name: String?
     var picture: String?
     
+    override init() {}
+    
     required init?(map: Map) {
         super.init()
         self.mapping(map: map)

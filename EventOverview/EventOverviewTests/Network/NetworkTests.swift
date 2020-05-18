@@ -56,50 +56,50 @@ class NetworkTests: XCTestCase {
         
     }
      
-     func testFake_RequestShould_ReturnEventsOrNot_FinishWithSuccess () {
-         
-        let requestExpectation = expectation(description: "Request should finish with success and return 3 items")
+    func testFake_RequestShould_ReturnEventsOrNot_FinishWithSuccess () {
         
-        var events: [Event] = []
+    let requestExpectation = expectation(description: "Request should finish with success and return 3 items")
+    
+    var events: [Event] = []
+    
+    XCTAssertEqual(0, events.count, "Should be empty before service")
+    
+    do {
         
-        XCTAssertEqual(0, events.count, "Should be empty before service")
+        let networkProtocol = EventProtocol(route: .events)
         
-        do {
+        let task = try NetworkMock.requestMock(networkProtocol, data: self.fakeData.data) { data, error in
             
-            let networkProtocol = EventProtocol(route: .events)
-            
-            let task = try NetworkMock.requestMock(networkProtocol, data: self.fakeData.data) { data, error in
-                
-                if let message = error {
-                    XCTFail(message)
-                    return
-                }
-                
-                XCTAssertNotNil(data, "Data is null")
-                
-                guard let data = data else { return }
-                let response = self.fakeData.mapArray(data: data, type: Event.self)
-                    
-                if let array = response {
-                    events = array
-                }
-                    
-                requestExpectation.fulfill()
-                
+            if let message = error {
+                XCTFail(message)
+                return
             }
             
-            task.resume()
+            XCTAssertNotNil(data, "Data is null")
             
-            wait(for: [requestExpectation], timeout: 180.0)
+            guard let data = data else { return }
+            let response = self.fakeData.mapArray(data: data, type: Event.self)
+                
+            if let array = response {
+                events = array
+            }
+                
+            requestExpectation.fulfill()
             
-            XCTAssertEqual(events.count >= 0, true, "Should has items after request")
-            
-            
-        } catch let error as NSError {
-            XCTFail(error.localizedDescription)
         }
-         
-     }
+        
+        task.resume()
+        
+        wait(for: [requestExpectation], timeout: 180.0)
+        
+        XCTAssertEqual(events.count >= 0, true, "Should has items after request")
+        
+        
+    } catch let error as NSError {
+        XCTFail(error.localizedDescription)
+    }
+        
+    }
     
     func testFake_RequestShould_ReturnEventDetail_FinishWithSuccess () {
         
@@ -127,6 +127,37 @@ class NetworkTests: XCTestCase {
                 requestExpectation.fulfill()
                 
             }
+            
+            task.resume()
+            
+            wait(for: [requestExpectation], timeout: 180.0)
+            
+        } catch let error as NSError {
+            XCTFail(error.localizedDescription)
+        }
+        
+    }
+    
+    func testFake_RequestShould_ReturnEmpty_FinishWithSuccess () {
+        
+        let requestExpectation = expectation(description: "Request should return empty and finish with success")
+        
+        do {
+            
+            let networkProtocol = EventProtocol(route: .checkIn(eventId: "1", name: "Lucas", email: "wott@gmail"))
+            
+            let task = try NetworkMock.requestMock(networkProtocol, data: nil, completion: { (data, error) in
+                
+                if let message = error {
+                    XCTFail(message)
+                    return
+                }
+                
+                XCTAssertNil(data, "Must be null")
+                
+                requestExpectation.fulfill()
+                
+            })
             
             task.resume()
             

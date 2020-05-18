@@ -51,6 +51,12 @@
 		AB724C932472467F006B4BC3 /* ConfirmPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB724C912472467F006B4BC3 /* ConfirmPeopleTableViewCell.xib */; };
 		AB724C9624724B97006B4BC3 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C9424724B97006B4BC3 /* CouponTableViewCell.swift */; };
 		AB724C9724724B97006B4BC3 /* CouponTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB724C9524724B97006B4BC3 /* CouponTableViewCell.xib */; };
+		AB724C99247269EB006B4BC3 /* PeopleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C98247269EB006B4BC3 /* PeopleTests.swift */; };
+		AB724C9B24726A3A006B4BC3 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724C9A24726A3A006B4BC3 /* people.json */; };
+		AB724C9D24726BE9006B4BC3 /* peopleList.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724C9C24726BE9006B4BC3 /* peopleList.json */; };
+		AB724CA024726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C9E24726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift */; };
+		AB724CA124726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB724C9F24726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib */; };
+		AB724CA324727599006B4BC3 /* ConfirmCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CA224727599006B4BC3 /* ConfirmCheckInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +122,12 @@
 		AB724C912472467F006B4BC3 /* ConfirmPeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPeopleTableViewCell.xib; sourceTree = "<group>"; };
 		AB724C9424724B97006B4BC3 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
 		AB724C9524724B97006B4BC3 /* CouponTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponTableViewCell.xib; sourceTree = "<group>"; };
+		AB724C98247269EB006B4BC3 /* PeopleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTests.swift; sourceTree = "<group>"; };
+		AB724C9A24726A3A006B4BC3 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		AB724C9C24726BE9006B4BC3 /* peopleList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = peopleList.json; sourceTree = "<group>"; };
+		AB724C9E24726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckInFooterTableViewCell.swift; sourceTree = "<group>"; };
+		AB724C9F24726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCheckInFooterTableViewCell.xib; sourceTree = "<group>"; };
+		AB724CA224727599006B4BC3 /* ConfirmCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCheckInViewController.swift; sourceTree = "<group>"; };
 		BDDF31E8F2C908DADB1B3494 /* Pods_EventOverviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventOverviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE231D159E14F1F2B995450B /* Pods-EventOverview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverview.release.xcconfig"; path = "Target Support Files/Pods-EventOverview/Pods-EventOverview.release.xcconfig"; sourceTree = "<group>"; };
 		E6139445C90853F29E628279 /* Pods-EventOverviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverviewTests.release.xcconfig"; path = "Target Support Files/Pods-EventOverviewTests/Pods-EventOverviewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +298,7 @@
 				AB724C8324722CA9006B4BC3 /* General */,
 				AB724C4E247188CF006B4BC3 /* EventsViewController.swift */,
 				AB724C8524722D12006B4BC3 /* EventDetailViewController.swift */,
+				AB724CA224727599006B4BC3 /* ConfirmCheckInViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -352,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				AB724C6C2471FDCC006B4BC3 /* EventTests.swift */,
+				AB724C98247269EB006B4BC3 /* PeopleTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +381,8 @@
 		AB724C7B2471FFBC006B4BC3 /* JSONMock */ = {
 			isa = PBXGroup;
 			children = (
+				AB724C9C24726BE9006B4BC3 /* peopleList.json */,
+				AB724C9A24726A3A006B4BC3 /* people.json */,
 				AB724C7C2471FFBC006B4BC3 /* events.json */,
 				AB724C7D2471FFBC006B4BC3 /* event.json */,
 			);
@@ -406,6 +422,8 @@
 				AB724C912472467F006B4BC3 /* ConfirmPeopleTableViewCell.xib */,
 				AB724C9424724B97006B4BC3 /* CouponTableViewCell.swift */,
 				AB724C9524724B97006B4BC3 /* CouponTableViewCell.xib */,
+				AB724C9E24726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift */,
+				AB724C9F24726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib */,
 			);
 			path = EventDetail;
 			sourceTree = "<group>";
@@ -495,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB724C8F247244AA006B4BC3 /* LinkLabelTableViewCell.xib in Resources */,
+				AB724CA124726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib in Resources */,
 				AB724C5924718B66006B4BC3 /* EventsTableViewCell.xib in Resources */,
 				AB37A83224708B5B00177B3E /* LaunchScreen.storyboard in Resources */,
 				AB37A82F24708B5B00177B3E /* Assets.xcassets in Resources */,
@@ -509,8 +528,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB724C9D24726BE9006B4BC3 /* peopleList.json in Resources */,
 				AB724C7F2471FFBC006B4BC3 /* event.json in Resources */,
 				AB724C7E2471FFBC006B4BC3 /* events.json in Resources */,
+				AB724C9B24726A3A006B4BC3 /* people.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,8 +625,10 @@
 				AB724C492471821D006B4BC3 /* EventService.swift in Sources */,
 				AB37A82A24708B5900177B3E /* BaseViewController.swift in Sources */,
 				AB724C9624724B97006B4BC3 /* CouponTableViewCell.swift in Sources */,
+				AB724CA324727599006B4BC3 /* ConfirmCheckInViewController.swift in Sources */,
 				AB724C5824718B66006B4BC3 /* EventsTableViewCell.swift in Sources */,
 				AB724C4B247182F3006B4BC3 /* NetworkMock.swift in Sources */,
+				AB724CA024726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift in Sources */,
 				AB724C8A24724246006B4BC3 /* UITableViewExtension.swift in Sources */,
 				AB724C8824723EEA006B4BC3 /* EventDetailViewModel.swift in Sources */,
 				AB37A82624708B5900177B3E /* AppDelegate.swift in Sources */,
@@ -621,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB724C99247269EB006B4BC3 /* PeopleTests.swift in Sources */,
 				AB724C6E2471FE01006B4BC3 /* NetworkTests.swift in Sources */,
 				AB724C6F2471FE13006B4BC3 /* EventTests.swift in Sources */,
 				AB37A83D24708B5C00177B3E /* EventOverviewTests.swift in Sources */,

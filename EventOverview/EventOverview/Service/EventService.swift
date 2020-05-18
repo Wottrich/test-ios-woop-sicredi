@@ -56,5 +56,26 @@ class EventService {
         }
         
     }
+    
+    class func postCheckIn (
+        eventId: String, name: String, email: String,
+        completion: @escaping (String?) -> Void
+    ) {
+        
+        do {
+            
+            let networkProtocol = EventProtocol(route: .checkIn(eventId: eventId, name: name, email: email))
+            
+            try Network.request(networkProtocol, type: Event.self, completion: { data in
+                completion(nil)
+            }, failure: { error in
+                completion(error)
+            })
+            
+        } catch let error as NSError {
+            completion(error.localizedDescription)
+        }
+        
+    }
 
 }

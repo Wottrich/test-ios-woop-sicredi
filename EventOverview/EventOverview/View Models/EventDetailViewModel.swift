@@ -36,6 +36,8 @@ class EventDetailViewModel {
         }
     }
     
+    var checkingInProgress: Bool = false
+    
     func getEventById (id: String, callback: @escaping (String?) -> Void) {
         
         EventService.getEventById(id: id, success: { (event) in
@@ -46,6 +48,14 @@ class EventDetailViewModel {
         }, failure: { error in
             callback(error)
         })
+        
+    }
+    
+    func checkIn (name: String, email: String, callback: @escaping (String?) -> Void) {
+        
+        if let eventId = event?.id {
+            EventService.postCheckIn(eventId: eventId, name: name, email: email, completion: callback)
+        }
         
     }
     

@@ -67,6 +67,7 @@ class EventDetailViewController: BaseViewController {
         self.refreshControl.addTarget(self, action: #selector(getData), for: .valueChanged)
         self.tableView.refreshControl = self.refreshControl
         
+        self.tableView.registerXib(type: EventCheckInFooterTableViewCell.self)
         self.tableView.registerXib(type: CouponTableViewCell.self)
         self.tableView.registerXib(type: ConfirmPeopleTableViewCell.self)
         self.tableView.registerXib(type: LinkLabelTableViewCell.self)
@@ -78,6 +79,16 @@ class EventDetailViewController: BaseViewController {
     private func clearTableView() {
         self.viewModel.event = nil
         self.tableView.reloadData()
+    }
+    
+    private func onCheckIn () {
+         
+        if self.viewModel.event != nil {
+            self.navigate.to(self, viewControllerToGo: ConfirmCheckInViewController.self) { (nextViewController) in
+                nextViewController?.delegate = self
+            }.go(segue: .modal(modalPresentationStyle: .automatic, animated: true, completion: nil))
+        }
+        
     }
     
     @IBAction func didTapShare(_ sender: Any) {
@@ -99,6 +110,32 @@ class EventDetailViewController: BaseViewController {
             
         }
 
+    }
+    
+}
+
+extension EventDetailViewController: ConfirmCheckInViewControllerProtocol {
+    
+    func confirmCheckIn(name: String, email: String) {
+        self.viewModel.checkingInProgress = true
+        self.tableView.reloadData()
+        self.viewModel.checkIn(name: name, email: email) { (error) in
+            
+            self.viewModel.checkingInProgress = false
+            self.tableView.reloadData()
+            
+            if let message = error {
+                self.alert(error: message)
+                return
+            }
+            
+            self.alert(
+                message: "Check-in realizado com sucesso.\nAproveite o evento :D",
+                style: .alert,
+                handlers: [.init(title: "OK", style: .default, handler: nil)]
+            )
+            
+        }
     }
     
 }
@@ -184,9 +221,34 @@ extension EventDetailViewController: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section != 1 {
+            return 0
+        } else {
+            return EventCheckInFooterTableViewCell.height
+        }
+    }
+    
 }
 
 extension EventDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        if section != 1 {
+            return nil
+        }
+        
+        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: EventCheckInFooterTableViewCell.identifier)
+        as? EventCheckInFooterTableViewCell else { return UIView() }
+        
+        let checking = self.viewModel.checkingInProgress
+        
+        headerCell.setup(title: checking ? "Checking" : "Check-In", color: checking ? #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) : #colorLiteral(red: 0, green: 0.09803921569, blue: 0.2784313725, alpha: 1))
+        headerCell.onClick = self.onCheckIn
+        
+        return headerCell
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerCell = tableView.dequeueReusableCell(withIdentifier: EventHeaderTableViewCell.identifier)
