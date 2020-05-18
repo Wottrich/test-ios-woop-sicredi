@@ -26,7 +26,12 @@ enum EventEntry {
     
 }
 
-class EventDetailViewModel {
+protocol EventDetailViewModelProtocol {
+    var event: Event? { get }
+    var coupons: [Coupon] { get }
+}
+
+class EventDetailViewModel: EventDetailViewModelProtocol {
     
     var event: Event?
     

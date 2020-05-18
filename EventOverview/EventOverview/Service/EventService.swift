@@ -8,7 +8,27 @@
 
 import UIKit
 
-class EventService {
+protocol EventServiceProtocol {
+    
+    static func getEvents (
+        success: @escaping ([Event]) -> Void,
+        failure: @escaping (String) -> Void
+    )
+    
+    static func getEventById (
+        id: String,
+        success: @escaping (Event) -> Void,
+        failure: @escaping (String) -> Void
+    )
+    
+    static func postCheckIn (
+        eventId: String, name: String, email: String,
+        completion: @escaping (String?) -> Void
+    )
+    
+}
+
+class EventService: EventServiceProtocol {
     
     class func getEvents (
         success: @escaping ([Event]) -> Void,

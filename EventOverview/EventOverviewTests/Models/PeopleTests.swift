@@ -23,6 +23,7 @@ class PeopleTests: XCTestCase {
 
     override func tearDown() {
         self.fakePeople = nil
+        self.fakePeopleList = nil
     }
 
     func testFake_MapPeopleWithSuccess () {
@@ -50,7 +51,7 @@ class PeopleTests: XCTestCase {
                 if let event = People(JSON: dictionary) {
                     return event
                 } else {
-                    XCTFail("Event is null, mappable not completed")
+                    XCTFail("People is null, mappable not completed")
                     return People()
                 }
             }
