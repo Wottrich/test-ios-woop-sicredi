@@ -57,6 +57,9 @@
 		AB724CA024726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724C9E24726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift */; };
 		AB724CA124726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB724C9F24726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib */; };
 		AB724CA324727599006B4BC3 /* ConfirmCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CA224727599006B4BC3 /* ConfirmCheckInViewController.swift */; };
+		AB724CA62472A9DB006B4BC3 /* CouponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CA52472A9DB006B4BC3 /* CouponTests.swift */; };
+		AB724CA92472AA5B006B4BC3 /* coupon.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724CA72472AA5B006B4BC3 /* coupon.json */; };
+		AB724CAA2472AA5B006B4BC3 /* coupons.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724CA82472AA5B006B4BC3 /* coupons.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,9 @@
 		AB724C9E24726C24006B4BC3 /* EventCheckInFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckInFooterTableViewCell.swift; sourceTree = "<group>"; };
 		AB724C9F24726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCheckInFooterTableViewCell.xib; sourceTree = "<group>"; };
 		AB724CA224727599006B4BC3 /* ConfirmCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCheckInViewController.swift; sourceTree = "<group>"; };
+		AB724CA52472A9DB006B4BC3 /* CouponTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTests.swift; sourceTree = "<group>"; };
+		AB724CA72472AA5B006B4BC3 /* coupon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coupon.json; sourceTree = "<group>"; };
+		AB724CA82472AA5B006B4BC3 /* coupons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coupons.json; sourceTree = "<group>"; };
 		BDDF31E8F2C908DADB1B3494 /* Pods_EventOverviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventOverviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE231D159E14F1F2B995450B /* Pods-EventOverview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverview.release.xcconfig"; path = "Target Support Files/Pods-EventOverview/Pods-EventOverview.release.xcconfig"; sourceTree = "<group>"; };
 		E6139445C90853F29E628279 /* Pods-EventOverviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverviewTests.release.xcconfig"; path = "Target Support Files/Pods-EventOverviewTests/Pods-EventOverviewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +372,7 @@
 			children = (
 				AB724C6C2471FDCC006B4BC3 /* EventTests.swift */,
 				AB724C98247269EB006B4BC3 /* PeopleTests.swift */,
+				AB724CA52472A9DB006B4BC3 /* CouponTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,6 +388,8 @@
 		AB724C7B2471FFBC006B4BC3 /* JSONMock */ = {
 			isa = PBXGroup;
 			children = (
+				AB724CA72472AA5B006B4BC3 /* coupon.json */,
+				AB724CA82472AA5B006B4BC3 /* coupons.json */,
 				AB724C9C24726BE9006B4BC3 /* peopleList.json */,
 				AB724C9A24726A3A006B4BC3 /* people.json */,
 				AB724C7C2471FFBC006B4BC3 /* events.json */,
@@ -529,8 +538,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB724C9D24726BE9006B4BC3 /* peopleList.json in Resources */,
+				AB724CAA2472AA5B006B4BC3 /* coupons.json in Resources */,
 				AB724C7F2471FFBC006B4BC3 /* event.json in Resources */,
 				AB724C7E2471FFBC006B4BC3 /* events.json in Resources */,
+				AB724CA92472AA5B006B4BC3 /* coupon.json in Resources */,
 				AB724C9B24726A3A006B4BC3 /* people.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +656,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB724C99247269EB006B4BC3 /* PeopleTests.swift in Sources */,
+				AB724CA62472A9DB006B4BC3 /* CouponTests.swift in Sources */,
 				AB724C6E2471FE01006B4BC3 /* NetworkTests.swift in Sources */,
 				AB724C6F2471FE13006B4BC3 /* EventTests.swift in Sources */,
 				AB37A83D24708B5C00177B3E /* EventOverviewTests.swift in Sources */,

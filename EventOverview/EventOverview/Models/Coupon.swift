@@ -15,6 +15,8 @@ class Coupon: NSObject {
     var eventId: String?
     var discount: Double?
     
+    override init(){}
+    
     required init?(map: Map) {
         super.init()
         self.mapping(map: map)
