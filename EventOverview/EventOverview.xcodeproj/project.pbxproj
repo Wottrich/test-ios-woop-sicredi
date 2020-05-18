@@ -63,6 +63,8 @@
 		AB724CAD2472ACF3006B4BC3 /* EventsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CAC2472ACF3006B4BC3 /* EventsViewModelTests.swift */; };
 		AB724CB12472B059006B4BC3 /* EventServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CB02472B059006B4BC3 /* EventServiceMock.swift */; };
 		AB724CB32472B36F006B4BC3 /* EventsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CB22472B36F006B4BC3 /* EventsViewModelMock.swift */; };
+		AB724CB52472C43B006B4BC3 /* EventDetailViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CB42472C43B006B4BC3 /* EventDetailViewModelMock.swift */; };
+		AB724CB92472C842006B4BC3 /* EventDetailViewModelMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CB82472C842006B4BC3 /* EventDetailViewModelMockTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		AB724CAC2472ACF3006B4BC3 /* EventsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModelTests.swift; sourceTree = "<group>"; };
 		AB724CB02472B059006B4BC3 /* EventServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventServiceMock.swift; sourceTree = "<group>"; };
 		AB724CB22472B36F006B4BC3 /* EventsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModelMock.swift; sourceTree = "<group>"; };
+		AB724CB42472C43B006B4BC3 /* EventDetailViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModelMock.swift; sourceTree = "<group>"; };
+		AB724CB82472C842006B4BC3 /* EventDetailViewModelMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModelMockTests.swift; sourceTree = "<group>"; };
 		BDDF31E8F2C908DADB1B3494 /* Pods_EventOverviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventOverviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE231D159E14F1F2B995450B /* Pods-EventOverview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverview.release.xcconfig"; path = "Target Support Files/Pods-EventOverview/Pods-EventOverview.release.xcconfig"; sourceTree = "<group>"; };
 		E6139445C90853F29E628279 /* Pods-EventOverviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverviewTests.release.xcconfig"; path = "Target Support Files/Pods-EventOverviewTests/Pods-EventOverviewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -450,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				AB724CAC2472ACF3006B4BC3 /* EventsViewModelTests.swift */,
+				AB724CB82472C842006B4BC3 /* EventDetailViewModelMockTests.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				AB724CB22472B36F006B4BC3 /* EventsViewModelMock.swift */,
+				AB724CB42472C43B006B4BC3 /* EventDetailViewModelMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -682,6 +688,7 @@
 				AB37A82824708B5900177B3E /* SceneDelegate.swift in Sources */,
 				AB724C5124718AD1006B4BC3 /* BaseTableViewCell.swift in Sources */,
 				AB724C8E247244AA006B4BC3 /* LinkLabelTableViewCell.swift in Sources */,
+				AB724CB52472C43B006B4BC3 /* EventDetailViewModelMock.swift in Sources */,
 				AB724C332470DC94006B4BC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,6 +697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB724CB92472C842006B4BC3 /* EventDetailViewModelMockTests.swift in Sources */,
 				AB724C99247269EB006B4BC3 /* PeopleTests.swift in Sources */,
 				AB724CAD2472ACF3006B4BC3 /* EventsViewModelTests.swift in Sources */,
 				AB724CA62472A9DB006B4BC3 /* CouponTests.swift in Sources */,
