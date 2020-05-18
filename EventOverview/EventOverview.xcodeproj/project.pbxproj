@@ -60,6 +60,9 @@
 		AB724CA62472A9DB006B4BC3 /* CouponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CA52472A9DB006B4BC3 /* CouponTests.swift */; };
 		AB724CA92472AA5B006B4BC3 /* coupon.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724CA72472AA5B006B4BC3 /* coupon.json */; };
 		AB724CAA2472AA5B006B4BC3 /* coupons.json in Resources */ = {isa = PBXBuildFile; fileRef = AB724CA82472AA5B006B4BC3 /* coupons.json */; };
+		AB724CAD2472ACF3006B4BC3 /* EventsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CAC2472ACF3006B4BC3 /* EventsViewModelTests.swift */; };
+		AB724CB12472B059006B4BC3 /* EventServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CB02472B059006B4BC3 /* EventServiceMock.swift */; };
+		AB724CB32472B36F006B4BC3 /* EventsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB724CB22472B36F006B4BC3 /* EventsViewModelMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +137,9 @@
 		AB724CA52472A9DB006B4BC3 /* CouponTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTests.swift; sourceTree = "<group>"; };
 		AB724CA72472AA5B006B4BC3 /* coupon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coupon.json; sourceTree = "<group>"; };
 		AB724CA82472AA5B006B4BC3 /* coupons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coupons.json; sourceTree = "<group>"; };
+		AB724CAC2472ACF3006B4BC3 /* EventsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModelTests.swift; sourceTree = "<group>"; };
+		AB724CB02472B059006B4BC3 /* EventServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventServiceMock.swift; sourceTree = "<group>"; };
+		AB724CB22472B36F006B4BC3 /* EventsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModelMock.swift; sourceTree = "<group>"; };
 		BDDF31E8F2C908DADB1B3494 /* Pods_EventOverviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventOverviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE231D159E14F1F2B995450B /* Pods-EventOverview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverview.release.xcconfig"; path = "Target Support Files/Pods-EventOverview/Pods-EventOverview.release.xcconfig"; sourceTree = "<group>"; };
 		E6139445C90853F29E628279 /* Pods-EventOverviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventOverviewTests.release.xcconfig"; path = "Target Support Files/Pods-EventOverviewTests/Pods-EventOverviewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 		AB37A83B24708B5C00177B3E /* EventOverviewTests */ = {
 			isa = PBXGroup;
 			children = (
+				AB724CAB2472AC8A006B4BC3 /* View Models */,
 				AB724C7B2471FFBC006B4BC3 /* JSONMock */,
 				AB724C712471FE25006B4BC3 /* Network */,
 				AB724C702471FE19006B4BC3 /* Models */,
@@ -254,6 +261,7 @@
 		AB37A84924708E7E00177B3E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				AB724CAE2472AF25006B4BC3 /* Mock */,
 				AB724C4C247188AA006B4BC3 /* EventsViewModel.swift */,
 				AB724C8724723EEA006B4BC3 /* EventDetailViewModel.swift */,
 			);
@@ -330,6 +338,7 @@
 		AB724C342470F4B5006B4BC3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				AB724CAF2472B037006B4BC3 /* Mock */,
 				AB724C352470F4C5006B4BC3 /* EventProtocol.swift */,
 				AB724C482471821D006B4BC3 /* EventService.swift */,
 			);
@@ -435,6 +444,30 @@
 				AB724C9F24726C24006B4BC3 /* EventCheckInFooterTableViewCell.xib */,
 			);
 			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		AB724CAB2472AC8A006B4BC3 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB724CAC2472ACF3006B4BC3 /* EventsViewModelTests.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		AB724CAE2472AF25006B4BC3 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AB724CB22472B36F006B4BC3 /* EventsViewModelMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		AB724CAF2472B037006B4BC3 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AB724CB02472B059006B4BC3 /* EventServiceMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,6 +655,7 @@
 				AB724C4D247188AA006B4BC3 /* EventsViewModel.swift in Sources */,
 				AB724C8224722295006B4BC3 /* DataMock.swift in Sources */,
 				AB724C2E2470B056006B4BC3 /* Network.swift in Sources */,
+				AB724CB32472B36F006B4BC3 /* EventsViewModelMock.swift in Sources */,
 				AB724C362470F4C5006B4BC3 /* EventProtocol.swift in Sources */,
 				AB724C922472467F006B4BC3 /* ConfirmPeopleTableViewCell.swift in Sources */,
 				AB724C8624722D12006B4BC3 /* EventDetailViewController.swift in Sources */,
@@ -631,6 +665,7 @@
 				AB724C5B2471BBD4006B4BC3 /* UIViewExtension.swift in Sources */,
 				AB724C682471F8EE006B4BC3 /* EventHeaderTableViewCell.swift in Sources */,
 				AB724C612471F016006B4BC3 /* UIImageViewExtension.swift in Sources */,
+				AB724CB12472B059006B4BC3 /* EventServiceMock.swift in Sources */,
 				AB724C3D2470FB83006B4BC3 /* Coupon.swift in Sources */,
 				AB724C5424718B06006B4BC3 /* UITableViewCellExtension.swift in Sources */,
 				AB724C492471821D006B4BC3 /* EventService.swift in Sources */,
@@ -656,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB724C99247269EB006B4BC3 /* PeopleTests.swift in Sources */,
+				AB724CAD2472ACF3006B4BC3 /* EventsViewModelTests.swift in Sources */,
 				AB724CA62472A9DB006B4BC3 /* CouponTests.swift in Sources */,
 				AB724C6E2471FE01006B4BC3 /* NetworkTests.swift in Sources */,
 				AB724C6F2471FE13006B4BC3 /* EventTests.swift in Sources */,

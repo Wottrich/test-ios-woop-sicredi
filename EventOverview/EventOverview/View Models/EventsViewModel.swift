@@ -8,7 +8,13 @@
 
 import UIKit
 
-class EventsViewModel {
+protocol EventsViewModelProtocol {
+    
+    var events: [Event] { get }
+    
+}
+
+class EventsViewModel: EventsViewModelProtocol {
 
     var events: [Event] = []
     
