@@ -25,6 +25,8 @@ class Event: NSObject {
     var title: String?
     var id: String?
     
+    override init() {}
+    
     required init?(map: Map) {
         super.init()
         self.mapping(map: map)
@@ -44,7 +46,7 @@ extension Event: Mappable {
         self.longitude <- map["longitude"]
         self.latitude <- map["latitude"]
         self.price <- map["price"]
-        self.eventDescription <- map["eventDescription"]
+        self.eventDescription <- map["description"]
         self.image <- map["image"]
         self.title <- map["title"]
         self.id <- map["id"]

@@ -12,9 +12,15 @@ class BaseTableViewCell: UITableViewCell {
     
     var indexPath: IndexPath?
     
+    var removeSelectionHighlight: Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setup()
+        if removeSelectionHighlight {
+            self.removeSelectionHighlight()
+        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,7 +28,7 @@ class BaseTableViewCell: UITableViewCell {
     }
     
     func setup() {
-        self.removeSelectionHighlight()
+        
     }
     
     func addAcessoryView() {

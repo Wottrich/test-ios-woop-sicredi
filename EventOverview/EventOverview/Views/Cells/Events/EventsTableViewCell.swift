@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Kingfisher
 
-class EventsTableViewCell: UITableViewCell {
+class EventsTableViewCell: BaseTableViewCell {
     
     static let height: CGFloat = 72.0
 
@@ -18,6 +18,7 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet weak var dateEventLabel: UILabel!
     @IBOutlet weak var priceEventLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var arrowImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +31,10 @@ class EventsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(event: Event) {
+    func setup(event: Event, hideArrow: Bool = false) {
         
+        self.arrowImage.isHidden = hideArrow
+                
         if let url = event.image {
             self.loadImage(photoUrl: url)
         }

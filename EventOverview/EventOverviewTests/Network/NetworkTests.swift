@@ -13,19 +13,18 @@ import ObjectMapper
 
 class NetworkTests: XCTestCase {
 
-    var fakeData: Data!
+    var fakeData: DataMock!
+    var fakeEvent: DataMock!
     
     override func setUp() {
-       
         let testBundle = Bundle(for: type(of: self))
-        let path = testBundle.path(forResource: "events", ofType: "json")
-        let data = try? Data(contentsOf: URL(fileURLWithPath: path!), options: .alwaysMapped)
-        
-        self.fakeData = data
+        self.fakeData = DataMock(bundle: testBundle, forResourse: "events", ofType: "json")
+        self.fakeEvent = DataMock(bundle: testBundle, forResourse: "event", ofType: "json")
     }
 
     override func tearDown() {
         self.fakeData = nil
+        self.fakeEvent = nil
     }
 
     func test_RequestShould_ReturnDataNotNil_FinishWithSuccess () {
@@ -69,39 +68,31 @@ class NetworkTests: XCTestCase {
             
             let networkProtocol = EventProtocol(route: .events)
             
-            let completion: (Data?) -> Void = { data in
-                XCTAssertNotNil(data)
+            let task = try NetworkMock.requestMock(networkProtocol, data: self.fakeData.data) { data, error in
                 
-                guard let data = data else {
-                    XCTFail("Data is null")
+                if let message = error {
+                    XCTFail(message)
                     return
                 }
                 
-                do {
-                    let response = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0))
+                XCTAssertNotNil(data, "Data is null")
+                
+                guard let data = data else { return }
+                let response = self.fakeData.mapArray(data: data, type: Event.self)
                     
-                    if let resultEvents = response as? NSArray {
-                        events = resultEvents as! [Event]
-                    }
-                    
-                    requestExpectation.fulfill()
-                } catch let error as NSError {
-                    XCTFail(error.localizedDescription)
+                if let array = response {
+                    events = array
                 }
+                    
+                requestExpectation.fulfill()
                 
             }
-            
-            let failure: (String) -> Void = { error in
-                XCTFail(error)
-            }
-            
-            let task = try NetworkMock.requestMock(networkProtocol, data: self.fakeData, completion: completion, failure: failure)
             
             task.resume()
             
             wait(for: [requestExpectation], timeout: 180.0)
             
-            XCTAssertEqual(events.count >= 0, true, "Should has items after service")
+            XCTAssertEqual(events.count >= 0, true, "Should has items after request")
             
             
         } catch let error as NSError {
@@ -109,5 +100,42 @@ class NetworkTests: XCTestCase {
         }
          
      }
+    
+    func testFake_RequestShould_ReturnEventDetail_FinishWithSuccess () {
+        
+        let requestExpectation = expectation(description: "Request should return event datail and finish with success")
+        
+        do {
+            
+            let mockEvent: Event? = self.fakeEvent.map(type: Event.self)
+            let networkProtocol = EventProtocol(route: .event(id: mockEvent?.id ?? ""))
+            
+            let task = try NetworkMock.requestMock(networkProtocol, data: self.fakeEvent.data) { data, error in
+
+                if let message = error {
+                    XCTFail(message)
+                    return
+                }
+                
+                XCTAssertNotNil(data)
+                
+                guard let data = data else { return }
+                let response = self.fakeEvent.map(data: data, type: Event.self)
+                
+                XCTAssertNotNil(response)
+                XCTAssertEqual(response?.id, mockEvent?.id)
+                requestExpectation.fulfill()
+                
+            }
+            
+            task.resume()
+            
+            wait(for: [requestExpectation], timeout: 180.0)
+            
+        } catch let error as NSError {
+            XCTFail(error.localizedDescription)
+        }
+        
+    }
 
 }

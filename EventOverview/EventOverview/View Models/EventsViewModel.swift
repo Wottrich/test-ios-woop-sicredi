@@ -20,7 +20,7 @@ class EventsViewModel {
             callback(nil)
             
         }, failure: { error in
-            callback(error ?? NetworkDefaultErrors.defaultError.rawValue)
+            callback(error)
         })
         
     }

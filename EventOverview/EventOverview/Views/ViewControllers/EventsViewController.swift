@@ -63,15 +63,8 @@ class EventsViewController: BaseViewController {
         self.refreshControl.addTarget(self, action: #selector(getData), for: .valueChanged)
         self.tableView.refreshControl = self.refreshControl
         
-        self.tableView.register(
-            EventHeaderTableViewCell.loadNib(),
-            forCellReuseIdentifier: EventHeaderTableViewCell.identifier
-        )
-        
-        self.tableView.register(
-            EventsTableViewCell.loadNib(),
-            forCellReuseIdentifier: EventsTableViewCell.identifier
-        )
+        self.tableView.registerXib(type: EventHeaderTableViewCell.self)
+        self.tableView.registerXib(type: EventsTableViewCell.self)
         
     }
     
@@ -86,8 +79,15 @@ extension EventsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //let event = self.viewModel.events[indexPath.row]
-        //TODO: go to event detail
+        let event = self.viewModel.events[indexPath.row]
+        
+        if let id = event.id {
+            self.navigate.to(self, viewControllerToGo: EventDetailViewController.self) { (nextViewController) in
+                nextViewController?.id = id
+            }.go()
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
